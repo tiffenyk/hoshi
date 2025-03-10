@@ -1,7 +1,7 @@
 {
   "name": "hoshi",
   "version": "1.0.0",
-  "description": "Website template for Payload",
+  "description": "Blog using PayloadCMS",
   "license": "MIT",
   "type": "module",
   "scripts": {
@@ -22,7 +22,6 @@
     "@payloadcms/db-mongodb": "latest",
     "@payloadcms/live-preview-react": "latest",
     "@payloadcms/next": "latest",
-    "@payloadcms/payload-cloud": "latest",
     "@payloadcms/plugin-form-builder": "latest",
     "@payloadcms/plugin-nested-docs": "latest",
     "@payloadcms/plugin-redirects": "latest",
