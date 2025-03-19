@@ -1,17 +1,16 @@
 import type { Field, Option } from 'payload'
-import * as icons from 'flowbite-react-icons/solid'
-import * as flowbiteSolidIcons from 'flowbite-react-icons/solid'
 import deepMerge from '@/utilities/deepMerge'
 
+const flowbiteIconsData = require('@iconify-json/flowbite/icons.json')
+
 export function generateFlowbiteIconOptions(): Option[] {
-  const flowbiteIconOptions: Option[] = []
-  Object.keys(icons).forEach((icon) => {
-    flowbiteIconOptions.push({
-      label: icon,
-      value: icon,
-    })
-  })
-  console.debug('flowbiteIconOptions', flowbiteIconOptions)
+  const iconNames = Object.keys(flowbiteIconsData.icons || {})
+
+  const flowbiteIconOptions: Option[] = iconNames.map((iconName) => ({
+    label: `${iconName}`,
+    value: `flowbite:${iconName}`,
+  }))
+
   return flowbiteIconOptions
 }
 

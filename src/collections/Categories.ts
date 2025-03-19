@@ -4,6 +4,7 @@ import { anyone } from '../access/anyone'
 import { authenticated } from '../access/authenticated'
 import { slugField } from '@/fields/slug'
 import { flowbiteIcons } from '@/fields/icons'
+import { tailwindColors } from '@/fields/colors'
 
 export const Categories: CollectionConfig = {
   slug: 'categories',
@@ -23,6 +24,7 @@ export const Categories: CollectionConfig = {
       type: 'text',
       required: true,
     },
+    tailwindColors(),
     flowbiteIcons(),
     ...slugField(),
   ],
