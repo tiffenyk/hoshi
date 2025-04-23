@@ -1226,7 +1226,6 @@ export interface Post {
     [k: string]: unknown;
   };
   relatedPosts?: (string | Post)[] | null;
-  categories?: (string | Category)[] | null;
   meta?: {
     title?: string | null;
     /**
@@ -1243,6 +1242,7 @@ export interface Post {
         name?: string | null;
       }[]
     | null;
+  categories?: (string | null) | Category;
   tags?: (string | Tag)[] | null;
   slug?: string | null;
   slugLock?: boolean | null;
@@ -1881,7 +1881,6 @@ export interface PostsSelect<T extends boolean = true> {
   heroImage?: T;
   content?: T;
   relatedPosts?: T;
-  categories?: T;
   meta?:
     | T
     | {
@@ -1897,6 +1896,7 @@ export interface PostsSelect<T extends boolean = true> {
         id?: T;
         name?: T;
       };
+  categories?: T;
   tags?: T;
   slug?: T;
   slugLock?: T;

@@ -49,7 +49,7 @@ export const Posts: CollectionConfig<'posts'> = {
   },
   admin: {
     group: 'Content',
-    defaultColumns: ['title', 'slug', 'updatedAt'],
+    defaultColumns: ['title', 'slug', 'updatedAt', 'categories', 'tags'],
     livePreview: {
       url: ({ data, req }) => {
         const path = generatePreviewPath({
@@ -123,15 +123,6 @@ export const Posts: CollectionConfig<'posts'> = {
               },
               hasMany: true,
               relationTo: 'posts',
-            },
-            {
-              name: 'categories',
-              type: 'relationship',
-              admin: {
-                position: 'sidebar',
-              },
-              hasMany: true,
-              relationTo: 'categories',
             },
           ],
           label: 'Meta',
@@ -217,6 +208,16 @@ export const Posts: CollectionConfig<'posts'> = {
           type: 'text',
         },
       ],
+    },
+    {
+      name: 'categories',
+      type: 'relationship',
+      relationTo: 'categories',
+      hasMany: false,
+      admin: {
+        position: 'sidebar',
+        allowCreate: true,
+      },
     },
     {
       name: 'tags',
