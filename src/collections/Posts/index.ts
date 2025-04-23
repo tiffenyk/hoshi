@@ -218,6 +218,16 @@ export const Posts: CollectionConfig<'posts'> = {
         },
       ],
     },
+    {
+      name: 'tags',
+      type: 'relationship',
+      relationTo: 'tags',
+      hasMany: true,
+      admin: {
+        position: 'sidebar',
+        allowCreate: true,
+      },
+    },
     ...slugField(),
   ],
   hooks: {

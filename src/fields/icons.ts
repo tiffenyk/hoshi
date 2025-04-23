@@ -1,7 +1,7 @@
 import type { Field, Option } from 'payload'
 import deepMerge from '@/utilities/deepMerge'
 
-const flowbiteIconsData = require('@iconify-json/flowbite/icons.json')
+import flowbiteIconsData from '@iconify-json/flowbite/icons.json' assert { type: 'json' }
 
 export function generateFlowbiteIconOptions(): Option[] {
   const iconNames = Object.keys(flowbiteIconsData.icons || {})
