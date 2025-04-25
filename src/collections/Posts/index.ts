@@ -210,6 +210,15 @@ export const Posts: CollectionConfig<'posts'> = {
       ],
     },
     {
+      name: 'featured',
+      type: 'checkbox',
+      label: 'Featured post?',
+      defaultValue: false,
+      admin: {
+        position: 'sidebar',
+      },
+    },
+    {
       name: 'categories',
       type: 'relationship',
       relationTo: 'categories',

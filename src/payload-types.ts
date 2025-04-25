@@ -1242,6 +1242,7 @@ export interface Post {
         name?: string | null;
       }[]
     | null;
+  featured?: boolean | null;
   categories?: (string | null) | Category;
   tags?: (string | Tag)[] | null;
   slug?: string | null;
@@ -1896,6 +1897,7 @@ export interface PostsSelect<T extends boolean = true> {
         id?: T;
         name?: T;
       };
+  featured?: T;
   categories?: T;
   tags?: T;
   slug?: T;
