@@ -1258,6 +1258,7 @@ export interface Post {
 export interface User {
   id: string;
   name?: string | null;
+  profileImage: string | Media;
   updatedAt: string;
   createdAt: string;
   email: string;
@@ -2038,6 +2039,7 @@ export interface TagsSelect<T extends boolean = true> {
  */
 export interface UsersSelect<T extends boolean = true> {
   name?: T;
+  profileImage?: T;
   updatedAt?: T;
   createdAt?: T;
   email?: T;
