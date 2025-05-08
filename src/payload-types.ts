@@ -1258,9 +1258,12 @@ export interface Post {
 export interface User {
   id: string;
   name?: string | null;
-  profileImage: string | Media;
+  profileImage?: (string | null) | Media;
   updatedAt: string;
   createdAt: string;
+  enableAPIKey?: boolean | null;
+  apiKey?: string | null;
+  apiKeyIndex?: string | null;
   email: string;
   resetPasswordToken?: string | null;
   resetPasswordExpiration?: string | null;
@@ -2042,6 +2045,9 @@ export interface UsersSelect<T extends boolean = true> {
   profileImage?: T;
   updatedAt?: T;
   createdAt?: T;
+  enableAPIKey?: T;
+  apiKey?: T;
+  apiKeyIndex?: T;
   email?: T;
   resetPasswordToken?: T;
   resetPasswordExpiration?: T;

@@ -23,6 +23,6 @@ export const Tags: CollectionConfig = {
       required: true,
       unique: true,
     },
-    ...slugField(),
+    ...slugField('tags'),
   ],
 }

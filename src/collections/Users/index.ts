@@ -16,7 +16,9 @@ export const Users: CollectionConfig = {
     defaultColumns: ['name', 'email'],
     useAsTitle: 'name',
   },
-  auth: true,
+  auth: {
+    useAPIKey: true,
+  },
   fields: [
     {
       name: 'name',
@@ -26,7 +28,6 @@ export const Users: CollectionConfig = {
       name: 'profileImage',
       type: 'upload',
       relationTo: 'media',
-      required: true,
     },
   ],
   timestamps: true,
