@@ -1209,6 +1209,10 @@ export interface ArchiveBlock {
 export interface Post {
   id: string;
   title: string;
+  /**
+   * This will be used as the meta description
+   */
+  summary?: string | null;
   heroImage?: (string | null) | Media;
   content: {
     root: {
@@ -1883,6 +1887,7 @@ export interface FormBlockSelect<T extends boolean = true> {
  */
 export interface PostsSelect<T extends boolean = true> {
   title?: T;
+  summary?: T;
   heroImage?: T;
   content?: T;
   relatedPosts?: T;

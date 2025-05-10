@@ -81,6 +81,15 @@ export const Posts: CollectionConfig<'posts'> = {
         {
           fields: [
             {
+              name: 'summary',
+              type: 'textarea',
+              label: 'Summary',
+              admin: {
+                description: 'This will be used as the meta description',
+              },
+              maxLength: 360,
+            },
+            {
               name: 'heroImage',
               type: 'upload',
               relationTo: 'media',
